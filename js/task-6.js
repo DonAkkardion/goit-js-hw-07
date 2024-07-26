@@ -22,14 +22,16 @@ function getRandomHexColor() {
 function createBoxes(amount) {
   newElementsContainer.innerHTML = "";
   let dimensions = 30;
+  let boxesHTML = "";
+
   for (let index = 0; index < amount; index++) {
-    newElementsContainer.insertAdjacentHTML(
-      "beforeend",
-      `<div style="background-color: ${getRandomHexColor()}; width: ${dimensions}px; height: ${dimensions}px;"></div>`
-    );
+    boxesHTML += `<div style="background-color: ${getRandomHexColor()}; width: ${dimensions}px; height: ${dimensions}px;"></div>`;
     dimensions += 10;
   }
+
+  newElementsContainer.innerHTML = boxesHTML;
 }
+
 function destroyBoxes() {
   newElementsContainer.innerHTML = "";
 }

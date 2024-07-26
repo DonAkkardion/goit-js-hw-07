@@ -2,6 +2,8 @@ const form = document.querySelector(".login-form");
 
 form.elements.email.setAttribute("placeholder", `Type area`);
 
+form.addEventListener("submit", handlerLogin);
+
 function handlerLogin(event) {
   event.preventDefault();
   const form = event.target;
